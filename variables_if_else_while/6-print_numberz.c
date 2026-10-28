@@ -7,15 +7,15 @@
  */
 int main(void)
 {
-	char c;
+	int n;
 
-	c = 48;
+	n = 0;
 
-	while (c <= 57)
+	while (n <= 9)
 	{
-		printf("%d", c);
-		c++;
+		putchar(n + 48);
+		n++;
 	}
-	printf("\n");
+	putchar('\n');
 	return (0);
 }
