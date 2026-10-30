@@ -9,7 +9,7 @@
  * If size is 0 or less, only a new line is printed.
  */
 void print_square(int size)
-{ 
+{
 	int column, row;
 
 	if (size <= 0)
@@ -20,14 +20,10 @@ void print_square(int size)
 	{
 		for (row = 0; row < size; row++)
 		{
-			row = 0;
-
-			while (row < column)
+			for (column = 0; column < size; column++)
 			{
-				_putchar(' ');
-				row++;
+				_putchar('#');
 			}
-			_putchar('\\');
 			_putchar('\n');
 		}
 	}
