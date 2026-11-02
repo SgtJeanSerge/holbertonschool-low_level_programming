@@ -4,7 +4,7 @@
  * main - Display option
  *
  * return: 0 (exit)
- */ 
+ */
 int main(void)
 {
   int nombre;
@@ -15,12 +15,18 @@ int main(void)
   printf("3) Multiply\n");
   printf("4) Divide\n");
   printf("0) Quit\n");
-  printf("Choice: ");
-  scanf("%d", &nombre);
-  
-  if(nombre == 0)
+
+  do
   {
-    printf("Bye!\n");
-  }
+    printf("Choice: ");
+    scanf("%d", &nombre);
+  } while (nombre < 0 || nombre > 4);
+  {
+      printf("Invalid choice\n");
+  } 
+  if (nombre == 0)
+    {
+      printf("Bye!\n");
+    } 
   return (0);
 }
