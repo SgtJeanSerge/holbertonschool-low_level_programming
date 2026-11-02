@@ -84,7 +84,7 @@ int main(void)
     {
 	printf("TOTAL seconds: %.6f\n", total);
         printf("BUILD_DATA seconds: %.6f\n", tbuild_dataset);
-	printf("PREOCESS seconds: %.6f\n", tprocess_dataset);
+	printf("PROCESS seconds: %.6f\n", tprocess_dataset);
 	printf("REDUCE seconds: %.6f\n", treduce_checksum);
     }
     return 0;
