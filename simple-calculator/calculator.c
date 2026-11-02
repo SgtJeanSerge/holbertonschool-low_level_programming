@@ -20,10 +20,11 @@ int main(void)
   {
     printf("Choice: ");
     scanf("%d", &nombre);
-  } while (nombre < 0 || nombre > 4);
-  {
+    if (nombre < 0 || nombre > 4) 
+    {
       printf("Invalid choice\n");
-  } 
+    }
+  } while (nombre < 0 || nombre > 4);
   if (nombre == 0)
     {
       printf("Bye!\n");
