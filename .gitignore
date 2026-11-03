@@ -6,3 +6,6 @@ _putchar.c
 
 # Executables
 a.out
+
+# Fichier qui ne a garder en local (inutile) dans le Github
+green_efficiency_analysis(en).md
