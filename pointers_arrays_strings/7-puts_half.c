@@ -10,7 +10,6 @@ void puts_half(char *str)
 {
 	int longueur;
 	int i;
-	int n;
 
 	longueur = 0;
 
@@ -19,13 +18,12 @@ void puts_half(char *str)
 		longueur++;
 	}
 
-	i = 0;
-	n = longueur / 2;
+	i = longueur / 2;
 
-	while (n < longueur)
+	while (i < longueur)
 	{
-		_putchar(str[n]);
-		n++;
+		_putchar(str[i]);
+		i++;
 	}
 	_putchar('\n');
 }
