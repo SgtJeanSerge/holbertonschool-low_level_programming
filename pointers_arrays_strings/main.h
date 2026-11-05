@@ -22,6 +22,7 @@ int _strcmp(char *s1, char *s2);
 void reverse_array(int *a, int n);
 unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
+char *_strstr(char *haystack, char *needle);
 char *string_toupper(char *);
 char *cap_string(char *);
 char *leet(char *);
