@@ -62,7 +62,25 @@ int main(void)
     {
       A = read_number("A: ");
       B = read_number("B: ");
-      printf("\033[4mResult\033[0m: \033[1;32m%d\033[0m\n", A + B);
+      printf("\033[4mResult\033[0m: \033[1;32m%d\033[0m\n\n", A + B);
+    }
+    if (nombre == 2)
+    {
+      A = read_number("A: ");
+      B = read_number("B: ");
+      printf("\033[4mResult\033[0m: \033[1;32m%d\033[0m\n\n", A - B);
+    }
+    if (nombre == 3)
+    {
+      A = read_number("A: ");
+      B = read_number("B: ");
+      printf("\033[4mResult\033[0m: \033[1;32m%d\033[0m\n\n", A * B);
+    }
+    if (nombre == 4)
+    {
+      A = read_number("A: ");
+      B = read_number("B: ");
+      printf("\033[4mResult\033[0m: \033[1;32m%d\033[0m\n\n", A / B);
     }
   } while (nombre != 0);
   printf("Bye!\n");
