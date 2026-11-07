@@ -1,7 +1,37 @@
 #include <stdio.h>
 
 /**
- * main - Display option
+ * read_number - loop until the right input 
+ * @prompt: text displayed before the input
+ *
+ * Return: the number typed by the user
+ */
+int read_number(char *prompt)
+{
+  int n;
+  int ok;
+  
+  do
+  {
+    printf("%s", prompt);
+    ok = scanf("%d", &n);
+    if (ok == 1 && getchar() == '\n')
+    {
+      return (n);
+    }
+    else
+    {
+      printf("Only digit accepted\n");
+      while (getchar() != '\n')
+      {
+        ;
+      }
+    }
+  } while (1);
+}
+
+/**
+ * main - Menu option
  *
  * return: 0 (exit)
  */
@@ -11,15 +41,14 @@ int main(void)
   int A;
   int B;
 
-  printf("Simple calculator\n");
-  printf("1) Add\n");
-  printf("2) Substract\n");
-  printf("3) Multiply\n");
-  printf("4) Divide\n");
-  printf("0) Quit\n");
-
   do
   {
+    printf("Simple calculator\n");
+    printf("1) Add\n");
+    printf("2) Substract\n");
+    printf("3) Multiply\n");
+    printf("4) Divide\n");
+    printf("0) Quit\n");
     do
     {
       printf("Choice: ");
@@ -31,28 +60,9 @@ int main(void)
     } while (nombre < 0 || nombre > 4);
     if (nombre == 1)
     {
-      do
-      {
-        printf("A: ");
-        scanf("%d", &A);
-        if (A != 0)
-        {
-          printf("Invalid choice\n");
-          getchar ();
-        }
-      } while (A != 1);
-      do
-      {
-        printf("B: ");
-        scanf("%d", &B);
-        if (B == 0)
-        {
-          printf("Invalid choice\n");
-          getchar ();
-        }
-      } while (B != 1);
-      printf("Result: %d", A + B);
-      printf("%d\n", A + B);
+      A = read_number("A: ");
+      B = read_number("B: ");
+      printf("\033[4mResult\033[0m: \033[1;32m%d\033[0m\n", A + B);
     }
   } while (nombre != 0);
   printf("Bye!\n");
