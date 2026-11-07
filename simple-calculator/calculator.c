@@ -31,7 +31,7 @@ int read_number(char *prompt)
 }
 
 /**
- * main - Menu option
+ * main - Display option & comput
  *
  * return: 0 (exit)
  */
@@ -80,7 +80,14 @@ int main(void)
     {
       A = read_number("A: ");
       B = read_number("B: ");
-      printf("\033[4mResult\033[0m: \033[1;32m%d\033[0m\n\n", A / B);
+      if (B == 0)
+      {
+        printf("Error: division by zero\n");
+      }
+      else
+      {
+      printf("\033[4mResult\033[0m: \033[1;32m%.2f\033[0m\n\n", (double)A / B);
+      }
     }
   } while (nombre != 0);
   printf("Bye!\n");
