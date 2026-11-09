@@ -8,6 +8,10 @@ _putchar.c
 a.out
 a
 2-str_concat
+3-alloc_grid
+
+# Supports de cours générés
+alloc_grid_memoire.pdf
 
 # Fichier qui ne a garder en local (inutile) dans le Github
 green_efficiency_analysis(en).md
