@@ -16,3 +16,4 @@ alloc_grid_memoire.pdf
 # Fichier qui ne a garder en local (inutile) dans le Github
 green_efficiency_analysis(en).md
 2-calloc
+3-array_range
