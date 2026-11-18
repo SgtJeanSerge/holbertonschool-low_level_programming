@@ -1,0 +1,6 @@
+Problème,Où,Cause,Conséquence (observée ou possible)
+Débordement de tampon (stack buffer overflow),user_input.c:8 et :11,"scanf(""%s"") sans limite dans buffer[32]",« stack smashing detected » dès 32 caractères ou plus
+Entrée non vérifiée (EXP33-C),user_input.c:11 et :13,"Retour de scanf non testé : si entrée vide, buffer reste non initialisé",strlen lit de la mémoire non initialisée
+Use-after-free,main.c:31,username lu par printf alors que session_destroy l'a déjà libéré (session.c:33),« Goodbye {c » : comportement indéfini (ENV30-C)
+Double free,session.c:33 puis main.c:33,Le même bloc est libéré deux fois,« double free detected » puis Aborted
+Cause commune des 2 derniers,session.c:13,session->user = username copie l'adresse : deux propriétaires pour un seul bloc,Propriété du nom ambiguë
