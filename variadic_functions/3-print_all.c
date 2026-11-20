@@ -13,31 +13,40 @@ void print_all(const char * const format, ...)
 {
 	va_list ap;
 	int i = 0;
-	char lettre;
+	char *sep = "";
 	char *chaine;
-	int num;
-	char *concat = "";
 
-	va_start(ap,format);
-	while (format[i] != '\0')
+	va_start(ap, format);
+	while (format != NULL && format[i] != '\0')
 	{
-		switch (format)
+		switch (format[i])
 		{
 			case 'c':
-				concat += va_arg(ap, int));
-				continue;
+				printf("%s%c", sep, va_arg(ap, int));
+				sep = ", ";
+				break;
 			case 'f':
-				concat += va_arg(ap, double);
-				continue;
+				printf("%s%f", sep, va_arg(ap, double));
+				sep = ", ";
+				break;
 			case 'i':
-				concat += va_arg(ap, int);
-				continue;
+				printf("%s%d", sep, va_arg(ap, int));
+				sep = ", ";
+				break;
 			case 's':
-				if (char * == NULL);
-					concat += "(nil)";
-				
-
+				chaine = (va_arg(ap, char *));
+				if (chaine == NULL)
+				{
+					printf("%s(nil)", sep);
+					sep = ", ";
+					break;
+				}
+				printf("%s%s", sep, chaine);
+				sep = ", ";
+				break;
 		}
 		i++;
 	}
+	printf("\n");
+	va_end(ap);
 }
